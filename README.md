@@ -32,7 +32,28 @@ uvicorn app.main:app --reload
   "tipo_arquivo": "xml",
   "hash_arquivo": "abc123",
   "origem": "robo_local",
-  "tipo_documento": "nota_servico"
+  "tipo_documento": "nota_servico",
+  "texto_extraido": "texto já extraído pelo robô",
+  "json_final": {"campos": "normalizados"},
+  "nota": {
+    "tipo_documento": "nota_servico",
+    "numero_nota": "123",
+    "serie": "A1",
+    "data_emissao": "2026-01-10",
+    "prestador_nome": "Fornecedor Exemplo",
+    "prestador_cnpj": "12345678000199",
+    "tomador_nome": "Cliente Exemplo",
+    "tomador_cnpj": "99887766000155",
+    "valor_bruto": 1500.0,
+    "valor_servico": 1400.0,
+    "iss": 50.0,
+    "irrf": 0,
+    "pis": 0,
+    "cofins": 0,
+    "csll": 0,
+    "inss": 0,
+    "valor_liquido": 1450.0
+  }
 }
 ```
 
@@ -61,5 +82,3 @@ uvicorn app.main:app --host 0.0.0.0 --port $PORT
 
 Health check path: `/api/v1/health`
 
-## Observação de schema exportacoes
-Caso o schema da tabela `exportacoes` ainda não tenha `cliente_id`, o sistema mantém `cliente_id` dentro de `filtros_json`. Recomendado adicionar `cliente_id` na tabela futuramente.
